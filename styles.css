@@ -1,0 +1,27 @@
+/* styles.css */
+
+/* 1) Register the font files */
+@font-face {
+  font-family: "ShlomoStam";
+  src: url("/fonts/ShlomoStam-Regular.woff2") format("woff2"),
+       url("/fonts/ShlomoStam-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* recommended */
+  /* (optional) limit font to Hebrew Unicode block */
+  unicode-range: U+0590-05FF;
+}
+
+/* 2) Apply to the specific div */
+#hebrew-block {
+  font-family: "ShlomoStam", "SBL Hebrew", "Cardo", serif;
+  direction: rtl;            /* Hebrew reads right-to-left */
+  unicode-bidi: embed;       /* keep directioning stable */
+  font-size: 28px;          /* adjust as needed */
+  line-height: 1.25;
+  /* optional typographic tweaks */
+  letter-spacing: 0.02em;
+  -webkit-font-feature-settings: "liga" 1; /* ligatures if the font supports them */
+  font-feature-settings: "liga" 1;
+  text-rendering: optimizeLegibility;
+}

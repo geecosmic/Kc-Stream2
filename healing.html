@@ -7,6 +7,9 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- <link rel="preload" href="/fonts/shlomo-stam/ShlomoStam.woff2" as="font" type="font/woff2" crossorigin="anonymous"> -->
+
+  <link rel="stylesheet" href="styles.css" />
 
   <style>
     :root {
@@ -61,25 +64,18 @@
       box-shadow: 0 6px 25px rgba(255, 255, 255, 0.1);
     }
 
-    /* .banner {
+    .banner {
       display: block;
       width: 100%;
       height: 350px;
-      object-fit: cover;
+      /* object-fit: cover; */
       padding: 70px;
       margin-top: 30px;
       box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
-    } */
+    }
 
-    .banner {
-        display: block;
-        width: calc(100% - 40px); /* creates space on both sides */
-        height: 500px;
-        object-fit: cover;
-        margin: 30px auto; /* centers and adds top/bottom spacing */
-        border-radius: 12px;
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
-        }
+   
+
 
     section {
       max-width: 850px;
@@ -98,11 +94,7 @@
       font-weight: bold;
       color: var(--accent);
     }
-    section p::last-letter {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: var(--accent);
-    }
+    
 
     /* ✨ Responsive design ✨ */
     @media (max-width: 768px) {
@@ -143,6 +135,47 @@
         height: 180px;
       }
     }
+
+
+
+/*======================== HEBREW============================================== */
+
+/* styles.css */
+
+/* 1) Register the font files */
+@font-face {
+  font-family: "ShlomoStam";
+  src: url("/fonts/ShlomoStam-Regular.woff2") format("woff2"),
+       url("/fonts/ShlomoStam-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* recommended */
+  /* (optional) limit font to Hebrew Unicode block */
+  unicode-range: U+0590-05FF;
+}
+
+/* 2) Apply to the specific div */
+#hebrew-block {
+  font-family: "ShlomoStam", "SBL Hebrew", "Cardo", serif;
+  direction: rtl;            /* Hebrew reads right-to-left */
+  unicode-bidi: embed;       /* keep directioning stable */
+  font-size: 28px;          /* adjust as needed */
+  line-height: 1.25;
+  /* optional typographic tweaks */
+  letter-spacing: 0.02em;
+  -webkit-font-feature-settings: "liga" 1; /* ligatures if the font supports them */
+  font-feature-settings: "liga" 1;
+  text-rendering: optimizeLegibility;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  #hebrew-block {
+    text-align: center;
+  }
+}
+
+
   </style>
 </head>
 
@@ -153,7 +186,57 @@
     <img src="healingx.jpeg" alt="Decorative Banner" class="banner2">
   </header>
 
-  <img src="healing-verse.png" alt="Wide Banner" class="banner">
+ <!-- <center>
+<img src="healing-verse.png" alt="Wide Banner" class="banner">
+ </center>  -->
+
+<!-- 
+<center>
+  <div id="hebrew-block" lang="he" dir="rtl">
+      <p>וּבְחִבּוּרָא קַדְמָאָה, פָּתַח רַעְיָא מְהֵימָנָא וְאָמַר, וַוי לוֹן לִבְנֵי</p>
+      <p>נָשָׁא, דְּאִינּוּן אֲטִימִין לִבָּא, סְתִימִין עַיְינִין, דְּלָא יַדְעִין אֵבָרִים דְּגוּפֵיהוֹן</p>
+      <p>עַל מַה אִינּוּן מִתְתַּקְּנִין, דְּהָא קָנֶ"ה תְּלַת חֵילִין כְּלִילָן בֵּיהּ, חַד הֶבֶל,</p>
+      <p>דְּאִיהוּ לַהַב אֵשׁ, דְּנָפִיק מִן לִבָּא וְאִתְפְּלַג לְז' הֲבָלִים, דְּאָמַר קֹהֶלֶת.</p>
+      <p>תִּנְיָינָא, אַוִּיר דְּעָאל לְגַבֵּיהּ מִלְּבַר. תְּלִיתָאָה, מַיִם דְּכַנְפֵי רֵיאָה,</p>
+      <p>דְּאִינּוּן דְּבוּקִים בְּקָנֶה. וּמִתְּלַת אִלֵּין אִתְעַבִיד קוֹל, מַיִם וְרוּחַ וְאֵשׁ,</p>
+      <p>וּמִתְפְּלֵג כָּל חַד לְז,' וְאִינּוּן ז' לְהָבִים, ז' אֲוִירוֹת, ז' נְחָלִים.</p>
+
+  </div>
+</center>  -->
+
+
+
+<!-- <center>
+  <div id="hebrew-block" lang="he" dir="rtl">
+
+      <br>וּבְחִבּוּרָא קַדְמָאָה, פָּתַח רַעְיָא מְהֵימָנָא וְאָמַר, וַוי לוֹן לִבְנֵי
+      נָשָׁא, דְּאִינּוּן אֲטִימִין לִבָּא, סְתִימִין עַיְינִין, דְּלָא יַדְעִין אֵבָרִים דְּגוּפֵיהוֹן<br>
+      עַל מַה אִינּוּן מִתְתַּקְּנִין, דְּהָא קָנֶ"ה תְּלַת חֵילִין כְּלִילָן בֵּיהּ, חַד הֶבֶל,<br>
+      דְּאִיהוּ לַהַב אֵשׁ, דְּנָפִיק מִן לִבָּא וְאִתְפְּלַג לְז' הֲבָלִים, דְּאָמַר קֹהֶלֶת.<br>
+      תִּנְיָינָא, אַוִּיר דְּעָאל לְגַבֵּיהּ מִלְּבַר. תְּלִיתָאָה, מַיִם דְּכַנְפֵי רֵיאָה,<br>
+      דְּאִינּוּן דְּבוּקִים בְּקָנֶה. וּמִתְּלַת אִלֵּין אִתְעַבִיד קוֹל, מַיִם וְרוּחַ וְאֵשׁ,<br>
+      וּמִתְפְּלֵג כָּל חַד לְז,' וְאִינּוּן ז' לְהָבִים, ז' אֲוִירוֹת, ז' נְחָלִים.
+
+  </div>
+</center>  -->
+
+
+
+<div id="hebrew-block" lang="he" dir="rtl">
+וּבְחִבּוּרָא קַדְמָאָה פָּתַח רַעְיָא מְהֵימָנָא וְאָמַר וַוי לוֹן לִבְנֵי נָשָׁא<br>
+דְּאִינּוּן אֲטִימִין לִבָּא סְתִימִין עַיְינִין דְּלָא יַדְעִין אֵבָרִים דְּגוּפֵיהוֹן<br>
+עַל מַה אִינּוּן מִתְתַּקְּנִין דְּהָא קָנֶ״ה תְּלַת חֵילִין כְּלִילָן בֵּיהּ חַד הֶבֶל<br>
+דְּאִיהוּ לַהַב אֵשׁ דְּנָפִיק מִן לִבָּא וְאִתְפְּלַג לְז׳ הֲבָלִים דְּאָמַר קֹהֶלֶת<br>
+תִּנְיָינָא אַוִּיר דְּעָאל לְגַבֵּיהּ מִלְּבַר תְּלִיתָאָה מַיִם דְּכַנְפֵי רֵיאָה<br>
+דְּאִינּוּן דְּבוּקִים בְּקָנֶה וּמִתְּלַת אִלֵּין אִתְעַבִיד קוֹל מַיִם וְרוּחַ וְאֵשׁ<br>
+וּמִתְפְּלֵג כָּל חַד לְז׳ וְאִינּוּן ז׳ לְהָבִים ז׳ אֲוִירוֹת ז׳ נְחָלִים
+</div>
+
+
+
+
+
+
 
   <section>
     <p>
@@ -167,14 +250,7 @@
 
     </p>
   </section>
-  <!-- <section>
-    <p>
-      Welcome to <strong>Healing</strong>, where design meets simplicity. This page blends elegance with clarity,
-      using clean typography, soft shadows, and balanced spacing. The visuals complement the narrative —
-      offering an immersive yet minimal experience. Whether you're exploring, creating, or simply admiring,
-      Healing invites you to slow down and appreciate beauty in simplicity.
-    </p>
-  </section> -->
+  
         <center><a style="color: wheat;" href="/index.html">Back to Home</a></center> <br>
 
 </body>
