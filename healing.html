@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Healing</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #00050a;
+      --text-color: #e0e0e0;
+      --card-bg: #ffffff;
+      --accent: #007bff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 10px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      letter-spacing: 1px;
+      color: #f2c307;
+      margin-bottom: 15px;
+      /* background-color: #e0e0e0; */
+    }
+
+    .small-img {
+      display: block;
+      margin: 0 auto 20px;
+      width: 200px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .small-img:hover {
+      transform: scale(1.05);
+    }
+
+    .banner2 {
+      display: block;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 6px 25px rgba(255, 255, 255, 0.1);
+    }
+
+    /* .banner {
+      display: block;
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      padding: 70px;
+      margin-top: 30px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+    } */
+
+    .banner {
+        display: block;
+        width: calc(100% - 40px); /* creates space on both sides */
+        height: 500px;
+        object-fit: cover;
+        margin: 30px auto; /* centers and adds top/bottom spacing */
+        border-radius: 12px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+        }
+
+    section {
+      max-width: 850px;
+      margin: 50px auto;
+      padding: 30px 25px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: #222;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    section p::first-letter {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--accent);
+    }
+    section p::last-letter {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    /* ✨ Responsive design ✨ */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .small-img {
+        width: 150px;
+      }
+
+      .banner2 {
+        width: 90%;
+      }
+
+      .banner {
+        height: 220px;
+      }
+
+      section {
+        margin: 30px 15px;
+        font-size: 1rem;
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      section {
+        margin: 25px 10px;
+        font-size: 0.95rem;
+      }
+
+      .banner {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Healing</h1>
+    <img src="mem-hei-shin.png" alt="Small Decorative Image" class="small-img">
+    <img src="healingx.jpeg" alt="Decorative Banner" class="banner2">
+  </header>
+
+  <img src="healing-verse.png" alt="Wide Banner" class="banner">
+
+  <section>
+    <p>
+         uvkhibura  kadma'a  patakh raya me'heimana ve'amar ,vai lon livnei
+        nasha deinun atimin liba,  setimin ainin , dela yadin evarim degufeihon
+        al ma inun mittaknin, deha kaneh telat khelin kelilan beih , khad hevel,
+        deihu lahav  esh  denafik min liba veitpelag lez' havalim, de'amar kohelet. <br>
+        tinyaina avir de'al legabeh milvar. telita'a, mayim dekhanfei reia
+        deinun devukim bekane. <br> umitlat ilein  itavid  kol, mayim veruakh ve'esh,
+        umitpeleg kal khad lez', ve'inun zayin' lehavim, zayin' avirot zayin' nekhalim.  
+
+    </p>
+  </section>
+  <!-- <section>
+    <p>
+      Welcome to <strong>Healing</strong>, where design meets simplicity. This page blends elegance with clarity,
+      using clean typography, soft shadows, and balanced spacing. The visuals complement the narrative —
+      offering an immersive yet minimal experience. Whether you're exploring, creating, or simply admiring,
+      Healing invites you to slow down and appreciate beauty in simplicity.
+    </p>
+  </section> -->
+        <center><a style="color: wheat;" href="/index.html">Back to Home</a></center> <br>
+
+</body>
+</html>
