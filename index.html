@@ -140,41 +140,6 @@
 
 </div>  -->
 
-<div style="width: max-content; margin: 0 auto; text-align: left; display: flex; flex-direction: column; gap: 8px;">
-
- <!-- Your Zoom links -->
-<a href="zoommtg://zoom.us/join?confno=83038749470&pwd=dWxwZzNFMktqaEhiVVZlanV5S29tUT09"
-   style="color: chartreuse; text-decoration: none; display: inline-flex; align-items: center;">
-    <i class="fa-solid fa-hand-point-right" aria-hidden="true" style="margin-right:6px;color: white;"></i>
-    Join KC Nigeria Sunday Zoom Meeting
-</a>
-
-<a href="https://share.kabbalah.com/ZoharCall"
-   onclick="window.open(this.href, '_system'); return false;"
-   style="color: chartreuse; text-decoration: none; display: inline-flex; align-items: center;">
-    <i class="fa-solid fa-hand-point-right" aria-hidden="true" style="margin-right:6px; color: white;"></i>
-    Join Zohar Call
-</a>
-
-</div> 
-
-
-<!-- Script to convert zoommtg:// links to browser-friendly https:// links -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const zoomLinks = document.querySelectorAll('a[href^="zoommtg://"]');
-  zoomLinks.forEach(link => {
-    const urlParams = new URLSearchParams(link.href.split('?')[1]);
-    const confno = urlParams.get('confno');
-    const pwd = urlParams.get('pwd');
-    if (confno) {
-      link.href = `https://us02web.zoom.us/j/${confno}${pwd ? '?pwd=' + pwd : ''}`;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-    }
-  });
-});
-</script>
 
 
 
