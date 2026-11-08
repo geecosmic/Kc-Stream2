@@ -1,135 +1,240 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Prosperity</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --bg: #0b0f1a;
-      --card: #141a28;
-      --text: #e9eefc;
-      --accent: #6ee7b7;
-    }
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto;
-      background: var(--bg);
-      color: var(--text);
-    }
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 16px;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 16px;
-      border-radius: 12px;
-      background: rgba(20,26,40,.9);
-      border: 1px solid rgba(255,255,255,.08);
-      margin: 16px 0 8px;
-      gap: 12px;
-    }
-    header h1 {
-      font-size: 1.05rem;
-      margin: 0;
-      line-height: 1.2;
-    }
-    header .cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    header button {
-      background: #1f2937;
-      color: #e5e7eb;
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 8px;
-      padding: 8px 12px;
-      cursor: pointer;
-    }
-    /* Viewer is responsive and fills available space */
-    .viewer {
-      height: calc(100vh - 180px);
-      min-height: 420px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.08);
-      background: #fff;
-    }
-    .viewer iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prosperity | KC Connections</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#120a2e;
+    --ink-2:#1d1147;
+    --text:#f6f2ff;
+    --muted:#b9aedd;
+    --violet:#8b5cf6;
+    --pink:#ff4fa3;
+    --amber:#ffb340;
+    --teal:#22d3c5;
+    --blue:#4f8cff;
+    --lime:#a3e635;
+    --radius:22px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    min-height:100vh;
+    font-family:"DM Sans",system-ui,sans-serif;
+    color:var(--text);
+    background:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
 
-    /* Improve tap targets on mobile */
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 12px;
-      }
-      header h1 {
-        font-size: 1rem;
-      }
-      .viewer {
-        height: calc(100vh - 260px);
-        min-height: 360px;
-      }
-    }
-  </style>
+  /* Aurora backdrop: the one animated moment */
+  .aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;background:
+    radial-gradient(120% 80% at 50% 0%, var(--ink-2), var(--ink) 70%);}
+  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;animation:drift 22s ease-in-out infinite alternate}
+  .b1{width:46vmax;height:46vmax;background:var(--violet);top:-14vmax;left:-10vmax}
+  .b2{width:38vmax;height:38vmax;background:var(--pink);top:8vmax;right:-12vmax;animation-duration:27s}
+  .b3{width:34vmax;height:34vmax;background:var(--teal);bottom:-14vmax;left:12vmax;animation-duration:31s;opacity:.4}
+  .b4{width:26vmax;height:26vmax;background:var(--amber);bottom:2vmax;right:6vmax;animation-duration:25s;opacity:.32}
+  @keyframes drift{
+    from{transform:translate3d(0,0,0) scale(1)}
+    to{transform:translate3d(6vmax,4vmax,0) scale(1.15)}
+  }
+  .grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.07;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+  .wrap{width:min(1120px,92%);margin:0 auto;padding:clamp(28px,6vw,64px) 0 48px}
+
+  /* Hero */
+  header{text-align:center;padding:clamp(24px,6vw,64px) 0 clamp(32px,5vw,56px)}
+  .logo{
+    width:112px;height:112px;object-fit:contain;border-radius:50%;
+    padding:10px;background:rgba(255,255,255,.12);
+    box-shadow:0 0 0 2px rgba(255,255,255,.25),0 0 60px rgba(139,92,246,.7),0 0 120px rgba(255,79,163,.35);
+    backdrop-filter:blur(10px);
+    margin-bottom:28px;
+  }
+  h1{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:800;
+    font-size:clamp(2.8rem,9vw,6rem);
+    line-height:1;
+    letter-spacing:-.03em;
+    background:linear-gradient(100deg,#fff 0%,#ffd1ec 30%,#ffb340 55%,#22d3c5 80%,#8fb4ff 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .lead{
+    max-width:34em;margin:20px auto 0;
+    font-size:clamp(1.05rem,2.2vw,1.25rem);color:var(--muted);
+  }
+  .home{
+    display:inline-block;margin-top:26px;padding:10px 22px;border-radius:999px;
+    color:var(--text);text-decoration:none;font-weight:500;font-size:.95rem;
+    border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);
+    backdrop-filter:blur(8px);transition:background .2s,border-color .2s;
+  }
+  .home:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5)}
+
+  /* Sections */
+  section{margin-top:clamp(32px,5vw,52px)}
+  h2{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
+    font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-.01em;
+    margin-bottom:6px;
+    display:flex;align-items:center;gap:14px;
+  }
+  h2::before{content:"";width:34px;height:6px;border-radius:99px;background:var(--c1)}
+  .sub{color:var(--muted);margin-bottom:20px;font-size:1rem}
+
+  .learn{--c1:var(--violet)}
+  .live{--c1:var(--pink)}
+  .texts{--c1:var(--amber)}
+  .explore{--c1:var(--teal)}
+  .extra{--c1:var(--blue)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+
+  .card{
+    --a:var(--violet);--b:var(--pink);
+    position:relative;display:flex;flex-direction:column;gap:14px;
+    padding:24px;border-radius:var(--radius);
+    color:var(--text);text-decoration:none;
+    background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.05));
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    overflow:hidden;
+    transition:transform .25s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s;
+  }
+  .card::after{ /* colour wash revealed on hover/focus */
+    content:"";position:absolute;inset:0;z-index:-1;opacity:0;
+    background:linear-gradient(135deg,var(--a),var(--b));
+    transition:opacity .25s;
+  }
+  .card:hover,.card:focus-visible{
+    transform:translateY(-6px);border-color:transparent;
+    box-shadow:0 18px 50px -12px var(--a);
+  }
+  .card:hover::after,.card:focus-visible::after{opacity:.9}
+  .card:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+  .orb{
+    width:48px;height:48px;border-radius:16px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--a),var(--b));
+    box-shadow:0 8px 24px -6px var(--a);
+    transition:background .25s;
+  }
+  .card:hover .orb,.card:focus-visible .orb{background:rgba(255,255,255,.25)}
+  .orb svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+  .card h3{font-family:"Bricolage Grotesque",sans-serif;font-size:1.25rem;font-weight:700;line-height:1.2}
+  .card p{font-size:.95rem;color:var(--muted);transition:color .25s}
+  .card:hover p,.card:focus-visible p{color:#fff}
+
+  /* Colour sets per card */
+  .c-violet{--a:#8b5cf6;--b:#5b3df5}
+  .c-pink{--a:#ff4fa3;--b:#ff7a59}
+  .c-amber{--a:#ffb340;--b:#ff6a3d}
+  .c-teal{--a:#22d3c5;--b:#2b8cff}
+  .c-blue{--a:#4f8cff;--b:#8b5cf6}
+  .c-lime{--a:#a3e635;--b:#22d3c5}
+  .c-rose{--a:#ff5d8f;--b:#c026d3}
+  .c-sun{--a:#ffd23f;--b:#ff8a3d}
+
+  .note{
+    margin-top:clamp(36px,6vw,64px);padding:18px 22px;border-radius:18px;
+    background:rgba(255,255,255,.07);border:1px dashed rgba(255,255,255,.28);
+    color:var(--muted);font-size:.95rem;text-align:center;
+  }
+  footer{margin-top:28px;text-align:center;color:var(--muted);font-size:.85rem;opacity:.8}
+
+  @media (prefers-reduced-motion:reduce){
+    .blob{animation:none}
+    .card{transition:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ===== Prosperity page ===== */
+  .wrap{width:min(1100px,94%)}
+  header{padding-bottom:clamp(8px,2vw,20px)}
+  h1{font-size:clamp(2.4rem,7vw,4.6rem)}
+  .doc{
+    margin-top:clamp(24px,4vw,40px);padding:clamp(14px,2.5vw,22px);border-radius:var(--radius);
+    background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.05));
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  }
+  .doc-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+  .doc-head h2{margin:0;font-size:clamp(1.15rem,2.6vw,1.5rem)}
+  .doc:nth-of-type(1) h2::before{background:var(--teal)}
+  .doc:nth-of-type(2) h2::before{background:var(--amber)}
+  .doc:nth-of-type(3) h2::before{background:var(--pink)}
+  .open{
+    display:inline-block;padding:9px 18px;border-radius:999px;color:var(--text);text-decoration:none;
+    font-weight:500;font-size:.92rem;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);
+    transition:background .2s,border-color .2s;
+  }
+  .open:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.55)}
+  .open:focus-visible,.home:focus-visible{outline:3px solid #fff;outline-offset:3px}
+  .viewer{
+    height:calc(100vh - 200px);min-height:420px;border-radius:14px;overflow:hidden;
+    border:1px solid rgba(255,255,255,.2);background:#fff;
+  }
+  .viewer iframe{width:100%;height:100%;border:0;display:block}
+  @media (max-width:600px){.viewer{height:calc(100vh - 260px);min-height:360px}}
+  .back{text-align:center;margin-top:36px}
+  .home{display:inline-block;padding:10px 22px;border-radius:999px;color:var(--text);text-decoration:none;
+    font-weight:500;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);backdrop-filter:blur(8px);
+    transition:background .2s,border-color .2s}
+  .home:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5)}
+</style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="aurora" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main class="wrap">
     <header>
-      <h1>SUSTENANCE/PROSPERITY SECTION</h1>
-      <div class="cta" aria-label="Open PDF actions">
-        <a href="Miketz.pdf" target="_blank" rel="noopener" style="text-decoration:none;">
-          <button aria-label="Open PDF in new tab">Open in new tab</button>
-        </a>
-      </div>
+      <h1>Sustenance and Prosperity</h1>
+      <p class="lead">Read the documents below here, or open them in a new tab.</p>
     </header>
 
+    <section class="doc">
+      <div class="doc-head">
+        <h2>Miketz</h2>
+        <a class="open" href="Miketz.pdf" target="_blank" rel="noopener">Open in new tab</a>
+      </div>
+      <div class="viewer" aria-label="Miketz PDF viewer">
+        <iframe src="https://docs.google.com/gview?embedded=true&url=https://kc-stream2.pages.dev/Miketz.pdf" title="Miketz PDF viewer" loading="lazy"></iframe>
+      </div>
+    </section>
 
-    <!-- Inline PDF viewer -->
+    <section class="doc">
+      <div class="doc-head">
+        <h2>Isaac's Prosperity Meditation</h2>
+        <a class="open" href="Issac's_Prosperity_meditation.pdf" target="_blank" rel="noopener">Open in new tab</a>
+      </div>
+      <div class="viewer" aria-label="Isaac's Prosperity Meditation PDF viewer">
+        <iframe src="https://docs.google.com/gview?embedded=true&url=https://kc-stream2.pages.dev/Issac's_Prosperity_meditation.pdf" title="Isaac's Prosperity Meditation PDF viewer" loading="lazy"></iframe>
+      </div>
+    </section>
 
-    <div class="viewer" aria-label="PDF viewer">
-      <!-- <iframe src="Miketz.pdf" title="PDF Viewer"></iframe> -->
-    <iframe src="https://docs.google.com/gview?embedded=true&url=https://kc-stream2.pages.dev/Miketz.pdf"> </iframe>
+    <section class="doc">
+      <div class="doc-head">
+        <h2>Awaken Miracles</h2>
+        <a class="open" href="awaken_miracles.pdf" target="_blank" rel="noopener">Open in new tab</a>
+      </div>
+      <div class="viewer" aria-label="Awaken Miracles PDF viewer">
+        <iframe src="https://docs.google.com/gview?embedded=true&url=https://kc-stream2.pages.dev/awaken_miracles.pdf" title="Awaken Miracles PDF viewer" loading="lazy"></iframe>
+      </div>
+    </section>
 
-    </div> 
-
-
-    <!-- ================================================================================== -->
-    
-    <br> <br>
-    
-    <div class="viewer" aria-label="PDF viewer">
-      <!-- <iframe src="Issac's_Prosperity_meditation.pdf" title="PDF Viewer"></iframe> -->
-
-        <iframe src="https://docs.google.com/gview?embedded=true&url=https://kc-stream2.pages.dev/Issac's_Prosperity_meditation.pdf"> </iframe>
-
-    </div> 
-
-
-    
-    <!-- ============================================================================================ -->
-    <br> <br>
-
-    <div class="viewer" aria-label="PDF viewer">
-      <!-- <iframe src="awaken_miracles.pdf" title="PDF Viewer"></iframe> -->
-
-      <iframe src="https://docs.google.com/gview?embedded=true&url=https://kc-stream2.pages.dev/awaken_miracles.pdf"> </iframe>
-    </div>
-
-
-
-  </div>
+    <div class="back"><a class="home" href="/index.html">Home</a></div>
+  </main>
 </body>
 </html>

@@ -1,257 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Healing</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <!-- <link rel="preload" href="/fonts/shlomo-stam/ShlomoStam.woff2" as="font" type="font/woff2" crossorigin="anonymous"> -->
-
-  <link rel="stylesheet" href="styles.css" />
-
-  <style>
-    :root {
-      --bg-color: #00050a;
-      --text-color: #e0e0e0;
-      --card-bg: #ffffff;
-      --accent: #007bff;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      overflow-x: hidden;
-    }
-
-    header {
-      text-align: center;
-      padding: 40px 20px 10px;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      letter-spacing: 1px;
-      color: #f2c307;
-      margin-bottom: 15px;
-      /* background-color: #e0e0e0; */
-    }
-
-    .small-img {
-      display: block;
-      margin: 0 auto 20px;
-      width: 200px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
-      transition: transform 0.3s ease;
-    }
-
-    .small-img:hover {
-      transform: scale(1.05);
-    }
-
-    .banner2 {
-      display: block;
-      margin: 20px auto;
-      width: 80%;
-      max-width: 600px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 6px 25px rgba(255, 255, 255, 0.1);
-    }
-
-    .banner {
-      display: block;
-      width: 100%;
-      height: 350px;
-      /* object-fit: cover; */
-      padding: 70px;
-      margin-top: 30px;
-      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
-    }
-
-   
-
-
-    section {
-      max-width: 850px;
-      margin: 50px auto;
-      padding: 30px 25px;
-      line-height: 1.8;
-      font-size: 1.05rem;
-      color: #222;
-      background: var(--card-bg);
-      border-radius: 16px;
-      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
-    }
-
-    section p::first-letter {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: var(--accent);
-    }
-    
-
-    /* ✨ Responsive design ✨ */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-
-      .small-img {
-        width: 150px;
-      }
-
-      .banner2 {
-        width: 90%;
-      }
-
-      .banner {
-        height: 220px;
-      }
-
-      section {
-        margin: 30px 15px;
-        font-size: 1rem;
-        padding: 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      section {
-        margin: 25px 10px;
-        font-size: 0.95rem;
-      }
-
-      .banner {
-        height: 180px;
-      }
-    }
-
-
-
-/*======================== HEBREW============================================== */
-
-/* styles.css */
-
-/* 1) Register the font files */
-@font-face {
-  font-family: "ShlomoStam";
-  src: url("/fonts/ShlomoStam-Regular.woff2") format("woff2"),
-       url("/fonts/ShlomoStam-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; /* recommended */
-  /* (optional) limit font to Hebrew Unicode block */
-  unicode-range: U+0590-05FF;
-}
-
-/* 2) Apply to the specific div */
-#hebrew-block {
-  font-family: "ShlomoStam", "SBL Hebrew", "Cardo", serif;
-  direction: rtl;            /* Hebrew reads right-to-left */
-  unicode-bidi: embed;       /* keep directioning stable */
-  font-size: 28px;          /* adjust as needed */
-  line-height: 1.25;
-  /* optional typographic tweaks */
-  letter-spacing: 0.02em;
-  -webkit-font-feature-settings: "liga" 1; /* ligatures if the font supports them */
-  font-feature-settings: "liga" 1;
-  text-rendering: optimizeLegibility;
-  padding: 20px;
-}
-
-@media (min-width: 768px) {
-  #hebrew-block {
-    text-align: center;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healing | KC Connections</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#120a2e;
+    --ink-2:#1d1147;
+    --text:#f6f2ff;
+    --muted:#b9aedd;
+    --violet:#8b5cf6;
+    --pink:#ff4fa3;
+    --amber:#ffb340;
+    --teal:#22d3c5;
+    --blue:#4f8cff;
+    --lime:#a3e635;
+    --radius:22px;
   }
-}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    min-height:100vh;
+    font-family:"DM Sans",system-ui,sans-serif;
+    color:var(--text);
+    background:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
 
+  /* Aurora backdrop: the one animated moment */
+  .aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;background:
+    radial-gradient(120% 80% at 50% 0%, var(--ink-2), var(--ink) 70%);}
+  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;animation:drift 22s ease-in-out infinite alternate}
+  .b1{width:46vmax;height:46vmax;background:var(--violet);top:-14vmax;left:-10vmax}
+  .b2{width:38vmax;height:38vmax;background:var(--pink);top:8vmax;right:-12vmax;animation-duration:27s}
+  .b3{width:34vmax;height:34vmax;background:var(--teal);bottom:-14vmax;left:12vmax;animation-duration:31s;opacity:.4}
+  .b4{width:26vmax;height:26vmax;background:var(--amber);bottom:2vmax;right:6vmax;animation-duration:25s;opacity:.32}
+  @keyframes drift{
+    from{transform:translate3d(0,0,0) scale(1)}
+    to{transform:translate3d(6vmax,4vmax,0) scale(1.15)}
+  }
+  .grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.07;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 
-  </style>
+  .wrap{width:min(1120px,92%);margin:0 auto;padding:clamp(28px,6vw,64px) 0 48px}
+
+  /* Hero */
+  header{text-align:center;padding:clamp(24px,6vw,64px) 0 clamp(32px,5vw,56px)}
+  .logo{
+    width:112px;height:112px;object-fit:contain;border-radius:50%;
+    padding:10px;background:rgba(255,255,255,.12);
+    box-shadow:0 0 0 2px rgba(255,255,255,.25),0 0 60px rgba(139,92,246,.7),0 0 120px rgba(255,79,163,.35);
+    backdrop-filter:blur(10px);
+    margin-bottom:28px;
+  }
+  h1{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:800;
+    font-size:clamp(2.8rem,9vw,6rem);
+    line-height:1;
+    letter-spacing:-.03em;
+    background:linear-gradient(100deg,#fff 0%,#ffd1ec 30%,#ffb340 55%,#22d3c5 80%,#8fb4ff 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .lead{
+    max-width:34em;margin:20px auto 0;
+    font-size:clamp(1.05rem,2.2vw,1.25rem);color:var(--muted);
+  }
+  .home{
+    display:inline-block;margin-top:26px;padding:10px 22px;border-radius:999px;
+    color:var(--text);text-decoration:none;font-weight:500;font-size:.95rem;
+    border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);
+    backdrop-filter:blur(8px);transition:background .2s,border-color .2s;
+  }
+  .home:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5)}
+
+  /* Sections */
+  section{margin-top:clamp(32px,5vw,52px)}
+  h2{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
+    font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-.01em;
+    margin-bottom:6px;
+    display:flex;align-items:center;gap:14px;
+  }
+  h2::before{content:"";width:34px;height:6px;border-radius:99px;background:var(--c1)}
+  .sub{color:var(--muted);margin-bottom:20px;font-size:1rem}
+
+  .learn{--c1:var(--violet)}
+  .live{--c1:var(--pink)}
+  .texts{--c1:var(--amber)}
+  .explore{--c1:var(--teal)}
+  .extra{--c1:var(--blue)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+
+  .card{
+    --a:var(--violet);--b:var(--pink);
+    position:relative;display:flex;flex-direction:column;gap:14px;
+    padding:24px;border-radius:var(--radius);
+    color:var(--text);text-decoration:none;
+    background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.05));
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    overflow:hidden;
+    transition:transform .25s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s;
+  }
+  .card::after{ /* colour wash revealed on hover/focus */
+    content:"";position:absolute;inset:0;z-index:-1;opacity:0;
+    background:linear-gradient(135deg,var(--a),var(--b));
+    transition:opacity .25s;
+  }
+  .card:hover,.card:focus-visible{
+    transform:translateY(-6px);border-color:transparent;
+    box-shadow:0 18px 50px -12px var(--a);
+  }
+  .card:hover::after,.card:focus-visible::after{opacity:.9}
+  .card:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+  .orb{
+    width:48px;height:48px;border-radius:16px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--a),var(--b));
+    box-shadow:0 8px 24px -6px var(--a);
+    transition:background .25s;
+  }
+  .card:hover .orb,.card:focus-visible .orb{background:rgba(255,255,255,.25)}
+  .orb svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+  .card h3{font-family:"Bricolage Grotesque",sans-serif;font-size:1.25rem;font-weight:700;line-height:1.2}
+  .card p{font-size:.95rem;color:var(--muted);transition:color .25s}
+  .card:hover p,.card:focus-visible p{color:#fff}
+
+  /* Colour sets per card */
+  .c-violet{--a:#8b5cf6;--b:#5b3df5}
+  .c-pink{--a:#ff4fa3;--b:#ff7a59}
+  .c-amber{--a:#ffb340;--b:#ff6a3d}
+  .c-teal{--a:#22d3c5;--b:#2b8cff}
+  .c-blue{--a:#4f8cff;--b:#8b5cf6}
+  .c-lime{--a:#a3e635;--b:#22d3c5}
+  .c-rose{--a:#ff5d8f;--b:#c026d3}
+  .c-sun{--a:#ffd23f;--b:#ff8a3d}
+
+  .note{
+    margin-top:clamp(36px,6vw,64px);padding:18px 22px;border-radius:18px;
+    background:rgba(255,255,255,.07);border:1px dashed rgba(255,255,255,.28);
+    color:var(--muted);font-size:.95rem;text-align:center;
+  }
+  footer{margin-top:28px;text-align:center;color:var(--muted);font-size:.85rem;opacity:.8}
+
+  @media (prefers-reduced-motion:reduce){
+    .blob{animation:none}
+    .card{transition:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ===== Healing page ===== */
+  @font-face{
+    font-family:"ShlomoStam";
+    src:url("/fonts/ShlomoStam-Regular.woff2") format("woff2"),
+        url("/fonts/ShlomoStam-Regular.woff") format("woff");
+    font-weight:normal;font-style:normal;font-display:swap;
+    unicode-range:U+0590-05FF;
+  }
+  .wrap{width:min(860px,92%)}
+  header{padding-bottom:clamp(20px,4vw,36px)}
+  h1{font-size:clamp(2.6rem,8vw,5rem)}
+  .emblem{
+    display:block;margin:0 auto 24px;width:250px;height:auto;border-radius:24px;
+    box-shadow:0 0 0 2px rgba(255,255,255,.25),0 0 60px rgba(34,211,197,.55),0 0 110px rgba(139,92,246,.45);
+    background:rgba(255,255,255,.1);padding:8px;
+  }
+  .banner2{
+    display:block;margin:28px auto 0;width:100%;max-width:600px;height:auto;border-radius:22px;
+    border:1px solid rgba(255,255,255,.25);
+    box-shadow:0 20px 60px -20px rgba(255,79,163,.5);
+  }
+  .panel{
+    margin-top:28px;padding:clamp(22px,4vw,36px);border-radius:var(--radius);
+    background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.05));
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  }
+  #hebrew-block{
+    font-family:"ShlomoStam","SBL Hebrew","Cardo",serif;
+    direction:rtl;unicode-bidi:embed;
+    font-size:28px;line-height:1.6;letter-spacing:.02em;
+    font-feature-settings:"liga" 1;text-rendering:optimizeLegibility;
+    color:#fff6d6;text-shadow:0 0 24px rgba(255,179,64,.45);
+  }
+  @media (min-width:768px){#hebrew-block{text-align:center}}
+  @media (max-width:520px){#hebrew-block{font-size:22px}}
+  .translit h2{font-size:1.3rem;margin-bottom:14px}
+  .translit h2::before{background:var(--teal)}
+  .translit p{max-width:62ch;color:#ece6ff;font-size:1.05rem;line-height:1.85}
+  .back{text-align:center;margin-top:36px}
+  .home{display:inline-block;padding:10px 22px;border-radius:999px;color:var(--text);text-decoration:none;
+    font-weight:500;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);backdrop-filter:blur(8px);
+    transition:background .2s,border-color .2s}
+  .home:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5)}
+  .home:focus-visible{outline:3px solid #fff;outline-offset:3px}
+</style>
 </head>
-
 <body>
-  <header>
-    <h1>Healing</h1>
-    <img src="mem-hei-shin.png" alt="Small Decorative Image" class="small-img">
-    <img src="healingx.jpeg" alt="Decorative Banner" class="banner2">
-  </header>
-
- <!-- <center>
-<img src="healing-verse.png" alt="Wide Banner" class="banner">
- </center>  -->
-
-<!-- 
-<center>
-  <div id="hebrew-block" lang="he" dir="rtl">
-      <p>וּבְחִבּוּרָא קַדְמָאָה, פָּתַח רַעְיָא מְהֵימָנָא וְאָמַר, וַוי לוֹן לִבְנֵי</p>
-      <p>נָשָׁא, דְּאִינּוּן אֲטִימִין לִבָּא, סְתִימִין עַיְינִין, דְּלָא יַדְעִין אֵבָרִים דְּגוּפֵיהוֹן</p>
-      <p>עַל מַה אִינּוּן מִתְתַּקְּנִין, דְּהָא קָנֶ"ה תְּלַת חֵילִין כְּלִילָן בֵּיהּ, חַד הֶבֶל,</p>
-      <p>דְּאִיהוּ לַהַב אֵשׁ, דְּנָפִיק מִן לִבָּא וְאִתְפְּלַג לְז' הֲבָלִים, דְּאָמַר קֹהֶלֶת.</p>
-      <p>תִּנְיָינָא, אַוִּיר דְּעָאל לְגַבֵּיהּ מִלְּבַר. תְּלִיתָאָה, מַיִם דְּכַנְפֵי רֵיאָה,</p>
-      <p>דְּאִינּוּן דְּבוּקִים בְּקָנֶה. וּמִתְּלַת אִלֵּין אִתְעַבִיד קוֹל, מַיִם וְרוּחַ וְאֵשׁ,</p>
-      <p>וּמִתְפְּלֵג כָּל חַד לְז,' וְאִינּוּן ז' לְהָבִים, ז' אֲוִירוֹת, ז' נְחָלִים.</p>
-
+  <div class="aurora" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span>
   </div>
-</center>  -->
+  <div class="grain" aria-hidden="true"></div>
 
+  <main class="wrap">
+    <header>
+      <h1>Healing</h1>
+      <img src="mem-hei-shin.png" alt="Decorative image" class="emblem">
+      <img src="healingx.jpeg" alt="Healing banner" class="banner2">
+    </header>
 
+    <div class="panel">
+      <div id="hebrew-block" lang="he" dir="rtl">
+וּבְחִבּוּרָא קַדְמָאָה פָּתַח רַעְיָא מְהֵימָנָא וְאָמַר וַוי לוֹן לִבְנֵי נָשָׁא<br>
+דְּאִינּוּן אֲטִימִין לִבָּא סְתִימִין עַיְינִין דְּלָא יַדְעִין אֵבָרִים דְּגוּפֵיהוֹן<br>
+עַל מַה אִינּוּן מִתְתַּקְּנִין דְּהָא קָנֶ״ה תְּלַת חֵילִין כְּלִילָן בֵּיהּ חַד הֶבֶל<br>
+דְּאִיהוּ לַהַב אֵשׁ דְּנָפִיק מִן לִבָּא וְאִתְפְּלַג לְז׳ הֲבָלִים דְּאָמַר קֹהֶלֶת<br>
+תִּנְיָינָא אַוִּיר דְּעָאל לְגַבֵּיהּ מִלְּבַר תְּלִיתָאָה מַיִם דְּכַנְפֵי רֵיאָה<br>
+דְּאִינּוּן דְּבוּקִים בְּקָנֶה וּמִתְּלַת אִלֵּין אִתְעַבִיד קוֹל מַיִם וְרוּחַ וְאֵשׁ<br>
+וּמִתְפְּלֵג כָּל חַד לְז׳ וְאִינּוּן ז׳ לְהָבִים ז׳ אֲוִירוֹת ז׳ נְחָלִים
+      </div>
+    </div>
 
-<!-- <center>
-  <div id="hebrew-block" lang="he" dir="rtl">
-
-      <br>וּבְחִבּוּרָא קַדְמָאָה, פָּתַח רַעְיָא מְהֵימָנָא וְאָמַר, וַוי לוֹן לִבְנֵי
-      נָשָׁא, דְּאִינּוּן אֲטִימִין לִבָּא, סְתִימִין עַיְינִין, דְּלָא יַדְעִין אֵבָרִים דְּגוּפֵיהוֹן<br>
-      עַל מַה אִינּוּן מִתְתַּקְּנִין, דְּהָא קָנֶ"ה תְּלַת חֵילִין כְּלִילָן בֵּיהּ, חַד הֶבֶל,<br>
-      דְּאִיהוּ לַהַב אֵשׁ, דְּנָפִיק מִן לִבָּא וְאִתְפְּלַג לְז' הֲבָלִים, דְּאָמַר קֹהֶלֶת.<br>
-      תִּנְיָינָא, אַוִּיר דְּעָאל לְגַבֵּיהּ מִלְּבַר. תְּלִיתָאָה, מַיִם דְּכַנְפֵי רֵיאָה,<br>
-      דְּאִינּוּן דְּבוּקִים בְּקָנֶה. וּמִתְּלַת אִלֵּין אִתְעַבִיד קוֹל, מַיִם וְרוּחַ וְאֵשׁ,<br>
-      וּמִתְפְּלֵג כָּל חַד לְז,' וְאִינּוּן ז' לְהָבִים, ז' אֲוִירוֹת, ז' נְחָלִים.
-
-  </div>
-</center>  -->
-
-
-
-<div id="hebrew-block" lang="he" dir="rtl">
-וּבְחִבּוּרָא קַדְמָאָה פָּתַח רַעְיָא מְהֵימָנָא וְאָמַר וַוי לוֹן לִבְנֵי נָשָׁא<br>
-דְּאִינּוּן אֲטִימִין לִבָּא סְתִימִין עַיְינִין דְּלָא יַדְעִין אֵבָרִים דְּגוּפֵיהוֹן<br>
-עַל מַה אִינּוּן מִתְתַּקְּנִין דְּהָא קָנֶ״ה תְּלַת חֵילִין כְּלִילָן בֵּיהּ חַד הֶבֶל<br>
-דְּאִיהוּ לַהַב אֵשׁ דְּנָפִיק מִן לִבָּא וְאִתְפְּלַג לְז׳ הֲבָלִים דְּאָמַר קֹהֶלֶת<br>
-תִּנְיָינָא אַוִּיר דְּעָאל לְגַבֵּיהּ מִלְּבַר תְּלִיתָאָה מַיִם דְּכַנְפֵי רֵיאָה<br>
-דְּאִינּוּן דְּבוּקִים בְּקָנֶה וּמִתְּלַת אִלֵּין אִתְעַבִיד קוֹל מַיִם וְרוּחַ וְאֵשׁ<br>
-וּמִתְפְּלֵג כָּל חַד לְז׳ וְאִינּוּן ז׳ לְהָבִים ז׳ אֲוִירוֹת ז׳ נְחָלִים
-</div>
-
-
-
-
-
-
-
-  <section>
-    <p>
-         uvkhibura  kadma'a  patakh raya me'heimana ve'amar ,vai lon livnei
-        nasha deinun atimin liba,  setimin ainin , dela yadin evarim degufeihon
+    <section class="panel translit">
+      <h2>Transliteration</h2>
+      <p>
+        uvkhibura kadma'a patakh raya me'heimana ve'amar ,vai lon livnei
+        nasha deinun atimin liba, setimin ainin , dela yadin evarim degufeihon
         al ma inun mittaknin, deha kaneh telat khelin kelilan beih , khad hevel,
-        deihu lahav  esh  denafik min liba veitpelag lez' havalim, de'amar kohelet. <br>
+        deihu lahav esh denafik min liba veitpelag lez' havalim, de'amar kohelet. <br>
         tinyaina avir de'al legabeh milvar. telita'a, mayim dekhanfei reia
-        deinun devukim bekane. <br> umitlat ilein  itavid  kol, mayim veruakh ve'esh,
-        umitpeleg kal khad lez', ve'inun zayin' lehavim, zayin' avirot zayin' nekhalim.  
+        deinun devukim bekane. <br> umitlat ilein itavid kol, mayim veruakh ve'esh,
+        umitpeleg kal khad lez', ve'inun zayin' lehavim, zayin' avirot zayin' nekhalim.
+      </p>
+    </section>
 
-    </p>
-  </section>
-  
-        <center><a style="color: wheat;" href="/index.html">Back to Home</a></center> <br>
-
+    <div class="back"><a class="home" href="/index.html">Home</a></div>
+  </main>
 </body>
 </html>
